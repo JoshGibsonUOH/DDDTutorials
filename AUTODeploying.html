@@ -80,7 +80,122 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT DEPLOYING HERE</h1>
+    <h1>Deploying Files</h1>
+
+    <h2>Local Deployment</h2>
+
+    <p>If you are planning on deploying to a local machine (or a VM) there are certain steps, you need to take alongside a completed YAML file to ensure that your project deploys correctly. The first of these is to set up a runner on your GitHub machine using the runner system that is built into GitHub actions. </p>
+
+    <p>To do this, from your main repository window you need to first click on settings on the right-hand side of the side of the toolbar</p>
+
+    <img src="Images/LocalDeployment/001.jpg">
+
+    <p>From the settings window you then need to select the actions dropdown from the menu on the left hand side, and then select the “runners” option.</p>
+
+    <img src="Images/LocalDeployment/002.jpg">
+
+    <p>You must then click the “New self-hosted runner” button on the top right hand side of the screen. </p>
+
+    <img src="Images/LocalDeployment/003.jpg">
+
+    <p>You should then select the “Windows” option from the three toolbars at the top, as our VM is currently running a Windows build. If you are looking to test this on a local machine you should select the OS you are planning to build on.</p>
+
+    <p>Open an instance of PowerShell and copy the commands from the first two boxes into it. Around three quarters of the way through this process you will end up with a screen like the one below. </p>
+
+    <img src="Images/LocalDeployment/004.jpg">
+
+    <p>When setting up your runner, leave the name of it’s runner group as default, and then give it a name that makes sense.</p>
+
+    <p>When the next option appears asking if you wish to add any additional labels press the enter button to skip.</p>
+
+    <p>You then must create a name for your work folder – GitHub’s system suggests to keep this as _work, so that is what we are going to do. </p>
+
+    <p>The next option asks if we would like to make the runner operate as a service – this means that the runner will start automatically when we start our OS. For now we are going to leave this as the default no, but if you are setting up a fully automated system in the future you may want to set this to yes.</p>
+
+    <p>When this setup is complete you can run the final command “./run.cmd” to start your runner listening.</p>
+
+    <img src="Images/LocalDeployment/005.jpg">
+
+    <p>This means that it is currently waiting for an action to begin speaking to it and telling it what to do.</p>
+
+    <p>Now we have our action listening, we need to write a YAML file that will allow us to connect to our runner and provide it with our application.</p>
+
+    <p>If you don’t know what a YAML is, or how they work – please check the tutorial on YAMLs provided!</p>
+
+    <img src="Images/LocalDeployment/006.jpg">
+
+    <p>The above YAML file will take your GitHub repository and then push it to your VM, automatically copying your files to the default location for IIS.  – you must have made sure to have created and have your GitHub actions runner running before you complete this process, or the repo will have nothing to push to.</p>
+
+    <p>A few things to take note of:</p>
+    <ol>
+      <li>You will need to replace the “Path\To\Your\GitHub\Action\File” with the file location for the file created by your GitHub runner for your repo. If you placed your runner on your C: Drive this will likely be C: -> actions-runner -> _work -> name-of-your-repo.</li>
+      <li>The asterisk (*) at the end of the folder structure is important for the copy to work properly – do not delete it! </li>
+      <li>The “-Force” command overwrites files within the directory even if they already exist – this prevents the GitHub action from failing because it can’t create a new file.</li>
+    </ol> 
+
+    <p>Once you have done this you may commit your YAML file – once the process has completed, if it is successful, you will be able to access your site from anywhere on campus using your VMs IP address.</p>
+
+    <h2>Deploying to GitHub Pages using GitHub Actions and Unity</h2>
+
+    <p>One of the features of GitHub we can use when putting together a workflow that involves hosting a project is GitHub pages, which is a service provided by GitHub that allows you to host projects for free directly from your repository – as long as they are static websites.</p>
+
+    <p>GitHub pages also has support for WebGL, which means that we can use it to host compiled Unity projects and make them accessible using the browser.</p>
+
+    <p>Before we start hosting however, we need to add some information to our GitHub repository that will let it know our Unity credentials – GitHub needs these so it can push them into our virtual machine and use them to build and test our projects. </p>
+
+    <p>To do this, we must first request a licence file from Unity. We can do this using a YAML file.</p>
+
+    <p>In GitHub navigate to the actions section and generate a new action, naming the action “activation”.</p>
+
+    <p>Enter the following YAML code and commit your completed action.</p>
+
+    <img src="Images/LocalDeployment/007.jpg">
+
+    <p>Commit your action and navigate to your recently created activation file action and you will see at the bottom of the page that if it succeeded it has created something called a an artifact, this is a file output that has come from running your YAML file. And should have the name of the Unity version used to upload the file followed by the extension “.alf “</p>
+
+    <img src="Images/LocalDeployment/008.jpg">
+
+    <p>Download the “. alf” file to your machine and extract the zip so that it can be accessed.</p>
+
+    <p>When you have downloaded your file then navigate to: https://license.unity3d.com/manual - you may be prompted to log into your Unity account – you may also run into a problem where the Unity licence website keeps refreshing – if this happens you may need to swap to a different browser. </p>
+
+    <p>Upload your “.alf” file using the on screen tool and you will be redirected to see if you would like to generate a licence for Unity personal or Pro, select personal and you when you have filled in the required information you will be asked to download the completed licence file.</p>
+
+    <img src="Images/LocalDeployment/009.jpg">
+
+    <p>When this has been completed you should then have downloaded a “.ulf” file – do not worry if this file does not match the name of your current Unity installation. They are backwards compatible.</p>
+
+    <p>Open your “.ulf” file using notepad and you should be greeted with an XML file that contains a collection of random characters for the signature – this is your Unity licence – we will need this in a second.</p>
+
+    <p>Navigate back to GitHub and into the repository that you are going to use, and click the settings option from the main GUI window.</p>
+
+    <img src="Images/LocalDeployment/010.jpg">
+
+    <p>From the settings window navigate down to security and click the secrets and variables section and then select “actions”</p>
+
+    <img src="Images/LocalDeployment/011.jpg">
+
+    <p>From this menu you should then select the “New repository secret” button that is visible on the top right-hand side of the menu. </p>
+
+    <img src="Images/LocalDeployment/012.jpg">
+
+    <p>This will redirect you to the new secret wizard.</p>
+
+    <p>In order for your GitHub action to pick up your license correctly you must give your secret the name UNITY_LICENSE, and then paste the license you downloaded earlier into the secret box.</p>
+
+    <img src="Images/LocalDeployment/013.jpg">
+
+    <p>Once this is complete press the add secret button and your secret will be added to your GitHub account. </p>
+
+    <p>We are now free to setup a YAML file for the testing and deployment of our Unity files. </p>
+
+    <img src="Images/LocalDeployment/014.jpg">
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

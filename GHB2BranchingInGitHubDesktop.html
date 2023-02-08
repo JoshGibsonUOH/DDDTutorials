@@ -80,7 +80,115 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT BRANCHING HERE</h1>
+    <h1>Branching in GitHub Desktop</h1>
+
+    <h2>Git Ingnores</h2>
+
+    <p>As we are now going to be going through the process of using branching and merging effectively in our project now is a good time to introduce the topic of the gitingore system and why we use it.</p>
+
+    <p>gitignore files are files that specify certain files from your current working directory that will be ignored by the git service you are using when completing commits.</p>
+
+    <p>gitignore files usually consist of machine generated files such as build artifacts or temporary files and logs generated when testing. These files are not needed by the main project repository and can take up unnecessary space whilst also making the committing process more complicated.</p>
+
+    <p>GitHub desktop has a selection of common gitignore files that you can add into your document when creating a repository. You can do this by selecting the required gitignore when you’re creating a repository</p>
+
+    <p>When in the Create a new repository wizard click the “Git ignore” dropdown and you will see a list of the pre-installed gitignores that come installed with GitHub desktop.</p>
+
+    <img src="Images/GD2Branching/001.jpg">
+
+    <p>For C# programs we want to use the “Visual Studio” gitignore. Scroll down and find “Visual Studio” in the list and click on it. This will ensure the correct files are not uploaded when you push commits. When you have done this, it should close the dropdown and the gitignore file you chose should appear in its place. </p>
+
+    <img src="Images/GD2Branching/002.jpg">
+
+    <p>You are then free to create your repository as normal.</p>
+
+    <p>To ensure your gitignore file has been added as expected, view your repo in windows explorer begore you push it up to GitHub. You should be able to see the gitignore file.</p>
+
+    <img src="Images/GD2Branching/003.jpg">
+
+    <p>If you are using Unity to create a project (or other engines) ensure that you have chosen the requisite gitignore file to go with them, as if you don’t these programs can struggle with source control which may affect your project. GitHub desktop provides inbuilt gitignores for Unity, Unreal and Godot which should all be used when needed.</p>
+
+    <h3>TASK</h3>
+
+    <p>Using the knowledge, you gained from last week create a new Git repository called “Branch Testing” using GitHub desktop and push it to GitHub.</p>
+
+    <p>When your repository is created and visible in GitHub desktop the next step is to create a new branch that you are going to work on. In order to do this, navigate to the top of the screen and click the “Current branch” button.</p>
+
+    <p>This will open a new window that allows you to create a new branch as well as viewing the ones that are already active. The window should look like the one below.</p>
+
+    <img src="Images/GD2Branching/004.jpg">
+
+    <p>To create a new branch, click the “New branch” button - a new window should pop up asking you to name your new branch:</p>
+
+    <img src="Images/GD2Branching/005.jpg">
+
+    <p>Name your branch “Adding Counter” and press the “Create branch” button to add the branch to your project.</p>
+
+    <p>You will be redirected back to the repository window and on first glance it will not look like much has changed. But on further investigation you will see that your current branch has changed from “Main” to “Adding-Counter”.</p>
+
+    <img src="Images/GD2Branching/006.jpg">
+
+    <p>This means that any changes you make (or add) will be added to the branch and *not* the main repository.</p>
+
+    <p>Before we begin to make changes to our branch, similar to when we create a new repository, we need to publish the branch to GitHub, so it is accessible from everywhere and not only on the local device. We do this in exactly the same way that we normally would a repository, by pressing the “Publish branch” button </p>
+
+    <p>To check your branch has been published successfully press the “View on GitHub button”from inside GitHub desktop or press the shortcut keys (Ctrl+Shift+G). This will take you to your repository on the GitHub website.</p>
+
+    <p>You may be greeted with a prompt that asks if you would like to protect your Main branch:</p>
+
+    <img src="Images/GD2Branching/007.jpg">
+
+    <p>I would strongly suggest doing this by pressing the “Protect this branch” button.</p>
+
+    <p>This will redirect you to a window with multiple options that you can use to protect your branch, that looks like the one below:</p>
+
+    <img src="Images/GD2Branching/008.jpg">
+
+    <p>What you wish to do with these settings may differ in the future, depending on how you (or your team) like to set out your workflow, for now we are just going to tick “Require a pull request before merging” keeping the options to their defaults and press the “Create” button.</p>
+
+    <p>You will then be asked to enter your password and confirm. Do this and you will be redirected back to the settings and your branch protection rules will be added.</p>
+
+    <p>When you have done this click the name of your repository at the top of the screen and you will be returned to the main repository screen:</p>
+
+    <img src="Images/GD2Branching/009.jpg">
+
+    <p>From the main repository screen navigate to the section that says branches above the information about your repo and click on it.</p>
+
+    <img src="Images/GD2Branching/010.jpg">
+
+    <p>This will redirect you to a screen that lists all of your branches, if you added the “Adding Counter” branch successfully earlier you should be able to see it listed here, like the screenshot below:</p>
+
+    <img src="Images/GD2Branching/011.jpg">
+
+    <p>If your branches section looks like this, then congratulations! You just made your first branch.</p>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

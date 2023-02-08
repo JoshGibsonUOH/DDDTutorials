@@ -80,7 +80,123 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT UNITY TESTING HERE</h1>
+    <h1>Testing Using the Unity Runner</h1>
+
+    <p>When developing any kind of application testing is very important, and making use of testing tools is something that if implemented correctly can help make our completed better, as well as saving times and resources during development.</p>
+
+    <p>Using these testing tools in tandem with CI/CD tools like GitHub actions allows us to automate the process of testing with every build that we create whilst also allowing us to identify issues with commits very early.</p>
+
+    <p>It is not only software development tools that support this process however, Unity also has their own unit testing platform named Unity Test Runners, which after set up allow you to automatically test your for errors. </p>
+
+    <p>To use Test Runners in Unity the first thing we need to do is get access to the test runner package - from the main Unity screen we do this by pressing the window button and then package manager, which should open up the package manager window.</p>
+
+    <img src="Images/UnityTesting/001.jpg">
+
+    <p>Click the drop down at the top left-hand side of the package manager window and change the package location from “in Project” to be “Unity Registry”</p>
+
+    <img src="Images/UnityTesting/002.jpg">
+
+    <p>When you have done this you then need to navigate to the top right hand side of the package manager window, and search for the worst test in the provided search bar. One of the results should be the “Test Framework” package. This is the one you want.</p>
+
+    <img src="Images/UnityTesting/003.jpg">
+
+    <p>Navigate to the install button at the bottom of the screen and allow the package manager to go through the process of installing the test framework.</p>
+
+    <img src="Images/UnityTesting/004.jpg">
+
+    <p>Depending on the version of Unity that you have installed the test framework may have come as part of your installation. If this is the case you may notice that the install button is replaced with one that says update, alongside the version you would be updating to. Select this button in the same way as the install button to ensure that you have the most up to date version of Unity’s test tools.</p>
+
+    <img src="Images/UnityTesting/005.jpg">
+
+    <p>To check the test framework has been installed successfully change the top left packages drop down back to “in project” and you should be able to see it in the list with a tick next to it, this indicates it has been successfully installed.</p>
+
+    <img src="Images/UnityTesting/006.jpg">
+
+    <p>Now we have added the test runner package to our project we have to now set it up so that it can be used with our project.</p>
+
+    <p>To do this we need to once again access the window option from the Unity menu at the top of the screen, and this time we are going to hover over “general” and then select “test runner”</p>
+
+    <img src="Images/UnityTesting/007.jpg">
+
+    <p>This will then bring up the Test Runner window, which we are going to use to run our tests in once we have created them.</p>
+
+    <img src="Images/UnityTesting/008.jpg">
+
+    <p>As you can see there are two options for the types of test that we are going to complete, these options are to run tests in either edit mode, or play mode.</p>
+
+    <p>For the sake of this demonstration we are looking to test the game whilst it is running, so select play mode from the options at the top.</p>
+
+    <p>I would also suggest taking the test runner and dragging it to an easily accessible place within the Unity UI – I like to have it next to Scene and Game mode at the top of the screen. </p>
+
+    <p>Once you have selected Play Mode from the options at the top of the window we are then going to press the “Create Play Mode Test Assembly Folder” button – this will create a folder for us within our asset folder called tests that contains an assembly file called “tests.asmdef”</p>
+
+    <img src="Images/UnityTesting/009.jpg">
+
+    <img src="Images/UnityTesting/010.jpg">
+
+    <p>Before we can start running tests our test runner needs access to our games code. In order to do this, we need to create a new assembly that will hold the information about our game within it.</p>
+
+    <p>To do this return to your assets folder and right click, highlighting create and then assembly definition.</p>
+
+    <img src="Images/UnityTesting/011.jpg">
+
+    <p>Name your newly created assembly “GameAssembly” this is an assembly that holds all of the information about your created project, including the code.</p>
+
+    <p>We now need to give your test runner access to our newly created assembly, to do this navigate back to yours test assembly in Scripts->Tests, select your tests assembly and the inspector should change to show all of the information about your assembly. </p>
+
+    <p>Within this section you then want to navigate to the “Use GUIDs” section which should be around the middle of the inspector.</p>
+
+    <img src="Images/UnityTesting/012.jpg">
+
+    <p>Press the Plus (+) button at the bottom of this Window and you will notice that a new reference has been created.</p>
+
+    <img src="Images/UnityTesting/013.jpg">
+
+    <p>Press the “target” button next to your newly created reference and search for your game assembly using the provided search bar.</p>
+
+    <img src="Images/UnityTesting/014.jpg">
+
+    <p>When you locate your game assembly click on it and it will be added to the reference, your tests can now see your code!</p>
+
+    <img src="Images/UnityTesting/015.jpg">
+
+    <p>Still within the “Test” folder navigate back to your test runner and click the “create test script in the current folder” button to generate a test script in your tests folder.</p>
+
+    <img src="Images/UnityTesting/016.jpg">
+
+    <p>Give your test script a good name and open it in Visual Studio. From here you should be greeted with the standard Unity code for testing purposes.</p>
+
+    <img src="Images/UnityTesting/017.jpg">
+
+    <p>Tests are created here in a similar way to the unit testing you have done previously.</p>
+
+    <p>SimplePasses() tend be done when you need to check something quickly to ensure that it is correct. And EnumeratorPasses() are done when you wish to test a series of events in a set order as EnumeratorPasses() will run over multiple frames.</p>
+
+    <p>Using the knowledge of unit testing you have learnt previously create some tests for your Unity program. For the sake of this demonstration, I am going to be creating a simple test that will check and see if the name of a spawned object is correct.</p>
+
+    <p>If you need help practicing tests please refer to the previous lab, for more help with testing in Unity there are further resources and guides that can be found here: https://docs.unity3d.com/Packages/com.unity.test-framework@1.3/manual/course/welcome.html</p>
+
+    <p>Save your tests and return to the Unity window, and if you still have the test runner open you will notice that is UI has changed to represent the tests that are still available within your program. </p>
+
+    <p>Open all of the dropdowns and depending on how many tests/test scripts you created you should see something similar to this.</p>
+
+    <img src="Images/UnityTesting/018.jpg">
+
+    <p>To run our tests and check to see if they are implemented correctly (and if our game as pass them) press the “run all” button located at the top left hand side of the window. </p>
+
+    <p>This will automatically put your game into Play Mode and will run any tests that are currently attached to it. </p>
+
+    <p>If Unity automatically redirected you to the game mode window click back on the Test runner and you should be able to see the results of your test.</p>
+
+    <p>Tests that have passed will have a green tick to them, and tests that have failed will be represented by a green tick.</p>
+
+    <img src="Images/UnityTesting/019.jpg">
+
+    <p>That’s it! You’ve just created and ran your first tests in Unity. If you combine these tests with the CICD tools found in the “automation in GitHub” tutorial, you will be able to upload your builds and automate your testing with them in GitHub! :)</p>
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
