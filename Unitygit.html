@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>DDD Tutorials</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">DDD Tutorials</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          GitHub Basics: Lab 1
+      </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="GHB1WhatIsGitHub.html">What is GitHub?</a>
+          <a class="dropdown-item" href="GHB1CreatingAGitHubAccount.html">Creating a GitHub Account</a>
+          <a class="dropdown-item" href="GHB1GitHubDesktopSetup.html">GitHub Desktop Setup</a>
+          <a class="dropdown-item" href="GHB1CreatingARepository.html">Creating A Repository</a>
+          <a class="dropdown-item" href="GHB1AccessingARepository.html">Accessing A Repository</a>
+          <a class="dropdown-item" href="GHB1TrackingRepositoryChanges.html">Tracking Repository Changes</a>
+        </div>
+    </li>
+    <li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          GitHub Basics: Lab 2
+      </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="GHB2GitHubContinued.html">GitHub Continued</a>
+          <a class="dropdown-item" href="GHB2BranchingInGitHubDesktop.html">Branching in GitHub Desktop</a>
+          <a class="dropdown-item" href="GHB2MergingInGitHubDekstop.html">Merging in GitHub Desktop</a>
+          <a class="dropdown-item" href="GHB2Conflicts.html">Conflicts</a>
+          <a class="dropdown-item" href="GHB2ProjectManagement.html">Project Mangement using GitHub</a>
+        </div>
+    </li>
+    <li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Automation Using GitHub Actions
+      </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="AUTOCICDintro.html">Introduction To CICD</a>
+          <a class="dropdown-item" href="AUTOYAMLfiles.html">What Are YAML files?</a>
+          <a class="dropdown-item" href="AUTOGitHubActions.html">Setting Up A GitHub Action</a>
+          <a class="dropdown-item" href="AUTODeploying.html">Deploying To A Local Machine/VM</a>
+        </div>
+    </li>
+    <li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Optional: GitHub In The Command Line
+      </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="CMDgit.html">Checking For And Installling GIT</a>
+          <a class="dropdown-item" href="CMDCreatingARepo.html">Creating A Local Repository</a>
+          <a class="dropdown-item" href="CMDLinkingToGithub.html">Linking Repository To GitHub</a>
+          <a class="dropdown-item" href="CMDChangingARepo.html">Making Changes To Repository</a>
+          <a class="dropdown-item" href="CMDUploadingToGitHub.html">Uploading To GitHub</a>
+          <a class="dropdown-item" href="CMDBranchingAndMerging.html">Branching and Merging</a>
+        </div>
+    </li>
+      <li>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Optional: Unity Tutorials
+      </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="UNITYTesting.html">Using The Test Runner</a>
+          <a class="dropdown-item" href="Unitygit.html">Using Unity With GitHub</a>
+        </div>
+    </li>
+    </ul>
+  </div>
+</nav>
+
+    <h1>Using GitHub With Unity Files</h1>
+
+    <p>Although Unity files are different in structure, and often larger than, traditional software development projects GitHub can still be used for source control and automation. </p>
+
+    <p>In order to set up our GitHub repositories to work using Unity files, we must use the command line and GitHub web GUI in tandem, we can not use GitHub desktop as to ensure this works correctly we need to provide GIT with some specific settings that it needs to follow. </p>
+
+    <p>To begin using your Unity files with GitHub you must first create a repository as normal using the GitHub web GUI. However, it is vitally important that when setting up your repository you have set the gitignore template to work with Unity. </p>
+
+    <img src="Images/GITUnity/001.jpg">
+
+    <p>If you are unsure of what a .gitignore is you can learn more about them in the previous GitHub tutorials provided, but as a brief overview a .gitignore tells the git service the files that it can ignore when uploading. This results in smaller repositories that only contain files vital to making the project work. </p>
+
+    <p>When you have finished creating your repository using the web GUI the next step is to create and empty local repository, create a new folder in your repositories folder especially for your Unity projects and access it using the “cd” command in PowerShell.</p>
+
+    <img src="Images/GITUnity/002.jpg">
+
+    <p>You will know that you have successfully accessed the file when your location (the information before the “>” sign) has changed to file path of the folder you created.</p>
+
+    <p>When you have accessed the correct folder you can then create a new repository within it by using the “git init” command. PowerShell will tell you if this process has been completed successfully.</p>
+
+    <img src="Images/GITUnity/003.jpg">
+
+    <p>After this, and before we fill the folder with our Unity files, we are then going to get access to our created GitHub repository. Depending on your GIT installation we may need to change our main branch name to be “main” to reflect GitHubs branch system.</p>
+
+    <p>We can do this by typing the command “git branch -m main” When completed PowerShell will move onto the next line and may not give any information that suggests it worked, this is fine and completely normal.</p>
+
+    <p>After this we need to get access to our repository. We use this by using the command “git remote add origin” and then a link to our GitHub repository, so for me this is “git remote add origin https://github.com/JoshGibsonUOH/UnityGitDemonstration”</p>
+
+    <p>PowerShell may again not give you any indication that this has worked, which is completely normal.</p>
+
+    <p>We then need to clone your online repository (alongside our .gitignore) into the local respository we have just created. We can do this using the command “git pull origin main”</p>
+
+    <p>PowerShell will this time update its UI to show you that the local files have been pulled down. You can check this by opening your file and you should be able to see the files from your repository in there. </p>
+
+    <img src="Images/GITUnity/004.jpg">
+    <img src="Images/GITUnity/005.jpg">
+
+    <p>We then need to copy the Unity files from our project into our repository folder. It is important that you copy the project files and not the project folder.</p>
+
+    <img src="Images/GITUnity/006.jpg">
+
+    <p>When you have copied your project files across to your repository it should look like the image below.</p>
+
+    <img src="Images/GITUnity/007.jpg">
+
+    <p>Return to the PowerShell window and use the “git status” command to see that your repository can pick up the new files. Your new files should be highlighted in red.</p>
+
+    <img src="Images/GITUnity/008.jpg">
+
+    <p>You may notice that the git status is only currently displaying four folders, when 6 have been added to the repository folder – this is our .gitignore working correctly.</p>
+
+    <p>Add our files to the repository by using the “git add .” and PowerShell should update showing all of your files being prepared to be added into a repository – you may get some warnings about certain files, this is perfectly normal.</p>
+
+    <img src="Images/GITUnity/009.jpg">
+
+    <p>Use the git status command to see your files have been prepared to be added to your repo.</p>
+
+    <p>The files should now show as highlighted in green. You may notice they are a lot of them, depending on how many files your Unity project contains.</p>
+
+    <p>We are now ready to commit our files to the repository – we can do this by using the command git commit -m “Description of our Commit” so in my case it will say “git commit -m “Added Unity Files”</p>
+
+    <p>The UI will then update to show our files being committed to the local repository.</p>
+
+    <img src="Images/GITUnity/010.jpg">
+
+    <p>We can then take these files and push them to our repository using the “git push -u origin main” command, that will take our local repo and push it to the main branch.</p>
+
+    <p>The UI should update, showing the files have been pushed to your remote repository, and you should be able to access them online using GitHub.</p>
+
+    <img src="Images/GITUnity/011.jpg">
+
+    <img src="Images/GITUnity/012.jpg">
+
+    <p>You can now access your Unity project from the repository and edit it as needed going forward, just make sure you have committed and pushed your changes when you have completed work. </p>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
