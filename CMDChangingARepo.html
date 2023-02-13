@@ -80,7 +80,48 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT CHANGING A REPO HERE</h1>
+  <h1>Making Changes To A Repository</h1>
+
+  <p>Now we have a repository of our own and we have linked it to GitHub the next step is to add some files of our own to our repo.</p>
+
+  <p>Drag (or create) a file of your choice into the repository folder and then return to the command line and enter the command</p>
+
+  <code>git status</code>
+
+  <p>This will return a list of files that git picks up within the repository that has been created. And should look like the image below.</p>
+
+  <img src="Images/CMDChangingARepo/001.jpg">
+
+  <p>As the response suggests git can find the file within the repository but it is currently “untracked”</p>
+
+  <p>Git will only manage a file that it has been specifically told to track, so, like the response from the command prompt suggests we need to do this manually. To do this use the command</p>
+
+  <code>git add .</code>
+
+  <p>*Note: this command adds all untracked files and folders to the repository - if you only wish to add individual files to the commit you can do so by writing git add and then the name of the file – including its extension - e.g. git add testfile.txt*</p>
+
+  <p>This will add everything in the folder to the stage, meaning that it is now managed by git.</p>
+
+  <p>View the status again and you will now see the files are being picked up by GIT within the respoitory.</p>
+
+  <img src="Images/CMDChangingARepo/002.jpg">
+
+  <p>Now Git is picking up our now files we need to commit them so that they are saved to the repository.</p>.
+
+  <p>We do this by using the command: <code>git commit –m “A message about the commit here”</code></p>
+
+  <p>This tells git that we are committing the files it currently has on the stage. The message you add here should be clear show exactly what changes you are making to the repository.</p>
+
+  <p>When you have written the command and the message press enter and the command line will update to inform you that the files you added have been committed to the repository.</p>
+
+  <img src="Images/CMDChangingARepo/003.jpg">
+
+  <p>Currently, the repository only exists locally, and if we want to push our changes to GitHub there are a few more steps that we need to complete - These steps can be found in the next section.</p> 
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

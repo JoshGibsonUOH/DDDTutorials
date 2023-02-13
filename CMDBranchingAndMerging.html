@@ -80,7 +80,56 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT BRANCHING AND MERGING HERE</h1>
+    <h1>Banching and Merging Using The Command Line</h1>
+
+    <p>Like in GitHub desktop, branches can also be created and managed using the command line.</p>
+
+    <p>To create a branch first tun the command:</p>
+
+    <code>Git checkout –b nameofthebranch</code>
+
+    <p>This will create a new branch and immediately move us into it. We can confirm the creation of our new branch by writing the <code>git branch</code> command, which will list all of the branches that currently exist.</p>
+
+    <img src="Images/CMDBranches/001.jpg">
+
+    <p>The Asterix (*) shows the branch that you are currently working on.</p>
+
+    <p>Add a new file to your local repository and add it to your repositories stage by using <code>git add</code> as shown previously.</p>
+
+    <p>Now we have created a branch and made some changes to it we need to push it to GitHub so that it can be accessed from anywhere.</p>
+
+    <p>To do this we use the git push command as we did previously, but instead of pushing the “main” branch we are instead going to push the branch that we just created. To do this enter the command:</p>
+
+    <code>Git push origin nameofbranchyoujustmade</code>
+
+    <p>And press enter. As it did previously the command line will update to show that the branch has been pushed to GitHub, similar to below:</p>
+
+    <img src="Images/CMDBranches/002.jpg">
+
+    <p>Once again, we can go to GitHub to ensure that the branch has been pushed successfully.</p>
+
+    <img src="Images/CMDBranches/003.jpg">
+
+    <p>Pull requests to merge these changes back into the main branch are then completed as they would be normally using the GitHub web GUI – for more information on this check the pull requests section <a href="GHB2MergingInGitHubDekstop.html">here</a></p>
+
+    <p>When a branch has been merged into a project using GitHub we then need to update our local version of the repository to reflect this.</p>
+
+    <p>To do this we must first switch back to the main branch in the command line, we do this using the command:</p>
+
+    <code>git checkout main</code>
+
+    <p>Now we are back in the main branch we can update it using the pull command we used earlier</p>
+
+    <code>git pull</code>
+
+    <p>This will update the main branch we are currently working on and the command line will change to reflect this:</p>
+
+    <img src="Images/CMDBranches/004.jpg">
+
+    <p>Congratulations – you can now branch and merge using the command line!</p>
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

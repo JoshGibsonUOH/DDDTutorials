@@ -80,7 +80,44 @@
   </div>
 </nav>
 
-    <h1>INFO ABOOUT LINKING CMD TO GITHUB HERE</h1>
+    <h1>Linking local GIT to a GitHub respoitory</h1>
+
+    <p>Currently, our repository only exists locally, but we want it to be available online so we can access it from anywhere and work collaboratively with others, in order to do this, we must use it alongside GitHub.</p>
+
+    <p>In order to do this, we must first create a repository on GitHub, navigate to the website and do this as you normally would.</p>
+
+    <p>When you have created the creation of your repository on GitHub you then need to navigate back to the console and enter the following command:</p>
+
+    <code>git remote add origin [link to your GitHub repository here]</code>
+
+    <p>This tells git the online repository that we are looking to use throughout the process.</p>
+
+    <p>Before we can begin pushing information from our local repository into the GitHub one, we first need to get the information that GitHub generated when it created the repo, including the repo and readme file.</p>
+
+    <p>To do this enter the following command:</p>
+
+    <code>git pull origin main</code>
+
+    <p>and press enter</p>
+
+    <p>**Note** you may find that you receive the following error informing you that it will not let you merge unrelated history's, this can often happen if you already have files in your repo - to fix this rerun the command with <code>--allow-unrelated-histories</code>
+    added, this will allow you to merge the information from GitHub into the repo you created.</p>
+
+    <p>A prompt so sign into GitHub may appear on the screen, log in with your GitHub details so that it can get access to the repo.</p>
+
+    <img src="Images/CMDLinkingToGithub/001.jpg">
+
+    <p>Click sign in with your browser and you will be redirected to a window asking if you wish to authorise this application – you may need to log in if you have not already before these displays.</p>
+
+    <img src="Images/CMDLinkingToGithub/002.jpg">
+
+    <p>Click the authorize button and will be redirected to enter your password again to confirm, when completed you should get a prompt to show your authorisation is completed</p>
+
+    <img src="Images/CMDLinkingToGithub/003.jpg">
+
+    <p>The GitHub specific information will then be cloned into your previously created local repo.</p>
+
+    <img src="Images/CMDLinkingToGithub/004.jpg">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
