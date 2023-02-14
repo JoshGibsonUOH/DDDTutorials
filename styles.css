@@ -22,11 +22,18 @@ p {
 	margin-bottom: 1em;
 }
 
+ol {
+
+	font-size: 1.2em;
+	margin: 0 auto;
+	max-width: 800px;
+	margin-bottom: 1em;
+}
+
 code {
 	font-size: 1.3em;
 	display: block;
 	margin: auto;
 	text-align: center;
-
 	margin-bottom: 1em;
 }
