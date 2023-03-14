@@ -86,7 +86,7 @@
 
     <h2>Local Deployment With GitHub Actions</h2>
 
-    <p>If you are planning on deploying to a local machine (or a VM) there are certain steps, you need to take alongside a completed YAML file to ensure that your project deploys correctly. The first of these is to set up a runner on your GitHub machine using the runner system that is built into GitHub actions. </p>
+    <p>If you are planning on deploying to a local machine (or a VM) there are certain steps, you need to take alongside a completed YAML file to ensure that your project deploys correctly. The first of these is to set up a runner on your virtual machine using the runner system that is built into GitHub actions. </p>
 
     <p>To do this, from your main repository window you need to first click on settings on the right-hand side of the side of the toolbar</p>
 
@@ -193,8 +193,52 @@
 
     <img src="Images/LocalDeployment/014.jpg">
 
+<<<<<<< HEAD
     <h2>Preparing a Blazor Pages Document For Deployment</h2>
     <p>If you wish to deploy a Blazor application to your Virtual Machine, there are a couple of steps that you need to take first.</p>
+=======
+    <h2>Deploying to an EXE file using Click Once</h2>
+
+    <p>Click Once is a tool provided by Microsoft as part of visual studio that allows you to deploy your created programs as executable files that can be installed and ran on a machine of your choosing.</p>
+
+    <p>Publishing your program is easy and can be achieved completely within Visual Studio.</p>
+
+    <p>To start the process of publishing your program as a Click Once application you must first right click on your project file within Visual Studio and select the publish option.</p>
+
+    <img src="Images/LocalDeployment/015.jpg">
+
+    <p>This will then redirect you to the publish wizard window that will look like the one below:</p>
+
+    <img src="Images/LocalDeployment/016.jpg">
+
+    <p>From this window choose folder and click next – you will then be prompted with the option of choosing how you wish to deploy your item – pick Click Once, and click next.</p>
+
+    <img src="Images/LocalDeployment/017.jpg">
+
+    <p>You will then be asked for your Publish location – for now we are going to leave it as bin\publish within our solution folder.</p>
+
+    <img src="Images/LocalDeployment/018.jpg">
+
+    <p>There are several other options that we can view here, including various settings and signing manifests for the application we are publishing, you can view these at your leisure – but for this demonstration we are keeping all the rest of the settings at their defaults, so you are free to click finish if you wish.</p>
+
+    <p>After you click finish, the window should change to show you that a Publish Profile has been created for your project. You can now close the window and access the publish window that has appeared behind it.</p>
+
+    <img src="Images/LocalDeployment/019.jpg">
+
+    <p>This Window displays all the information we created in our Publish Profile and should tell you that your project is ready to publish.</p>
+
+    <p>When you are ready select the publish option at the top right-hand side of the screen.</p>
+
+    <p>Visual Studio will then build a publish version of your application and will provide you with a notification when it has completed. We are now free to navigate to our publish location, which should be within your project folder -> bin -> publish and should take form of an installer.</p>
+
+    <img src="Images/LocalDeployment/020.jpg">
+
+    <p>If you see these files then you have successfully deployed to a ClickOnce installer.</p>
+
+
+
+
+>>>>>>> 05cb2095be52d3f03dec88624573bb826ab23ae7
 
     <h3>Installing the .Net Core hosting bundle</h3>
 
