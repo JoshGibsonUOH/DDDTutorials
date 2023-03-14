@@ -44,3 +44,17 @@ ol {
 	max-width: 800px;
 	margin-bottom: 1em;
 }
+
+/* unvisited link */
+a:link {
+  text-align: center;
+  display: block;	
+  color: #ffa47a;
+  margin-bottom: 1em;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ff7f17;
+  text-align: center;
+}
