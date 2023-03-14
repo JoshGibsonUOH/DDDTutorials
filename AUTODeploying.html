@@ -84,7 +84,7 @@
 
     <h1>Deploying Files</h1>
 
-    <h2>Local Deployment</h2>
+    <h2>Local Deployment With GitHub Actions</h2>
 
     <p>If you are planning on deploying to a local machine (or a VM) there are certain steps, you need to take alongside a completed YAML file to ensure that your project deploys correctly. The first of these is to set up a runner on your GitHub machine using the runner system that is built into GitHub actions. </p>
 
@@ -193,7 +193,81 @@
 
     <img src="Images/LocalDeployment/014.jpg">
 
+    <h2>Preparing a Blazor Pages Document For Deployment</h2>
+    <p>If you wish to deploy a Blazor application to your Virtual Machine, there are a couple of steps that you need to take first.</p>
 
+    <h3>Installing the .Net Core hosting bundle</h3>
+
+    <p>In order for IIS to be able to host your created Blazor application it must first have access to the ASPNetCoreModule. To get access to this on your virtual machine you must first install the ASP.NET core hosting bundle that is provided by Microsoft and can be found at the link below:</p>
+
+    <a href="https://download.visualstudio.microsoft.com/download/pr/ff197e9e-44ac-40af-8ba7-267d92e9e4fa/d24439192bc549b42f9fcb71ecb005c0/dotnet-hosting-7.0.3-win.exe">Click Me For The Hosting Bundle</a>
+
+    <p>Once you have installed the hosting bundle restart the IIS process by closing out of it and typing “iisreset” in the command prompt.</p>
+
+    <img src="Images/LocalDeployment/015.jpg">
+
+    <p>you can check that it has been installed successfully by navigating to IIS, selecting your server and selecting the modules tool.</p>
+
+    <img src="Images/LocalDeployment/016.jpg">
+
+    <p>Clicking modules should then redirect you to the modules window, and will provide you with a list of modules that IIS currently recognises.</p>
+
+    <p>You should now have a module named “AspNetCoreModuleV2”, this means that the module and bundle have been installed correctly and you can now host Blazor applications on your IIS server. </p>
+
+    <img src="Images/LocalDeployment/017.jpg">
+
+    <h3>Readying Blazor Document For Deployment</h3>
+
+    <p>Now you have prepared your server to host Blazor documents, we are now going to publish our created Blazor application in a way that will allow the server to host it.</p>
+
+    <p>Ensure that the debug version of your Blazor document is working correctly, then right click on your Blazor document and choose “publish”</p>
+
+    <img src="Images/LocalDeployment/018.jpg">
+
+    <p>This will redirect you to the publish wizard within Visual Studio. There are several options we can use here but for the purpose of this demonstration click folder, and then next.</p>
+
+    <img src="Images/LocalDeployment/019.jpg">
+
+    <p> Leave the folder location that appears within the next screen at its default, and then click finish, then close.</p>
+
+    <p>This will change publish window to show you that you currently have a file that is ready to be published. To do this navigate to the button on the top right hand side of the wizard that says publish, and click it.</p>
+
+    <img src="Images/LocalDeployment/020.jpg">
+
+    <p>This will build your program and then Publish it to the folder. When this process has been completed Visual Studio should give you a prompt to say that is has been done successfully.</p>
+
+    <img src="Images/LocalDeployment/021.jpg">
+
+    <p>Click open folder and you should see the output of your published document – remember where these are you will need them later! </p>
+
+    <img src="Images/LocalDeployment/022.jpg">
+
+    <h2>Local Deployment Without GitHub Actions</h2>
+    <h3>Copying Files to The Virtual Machine</h3>
+    <p>Before we copy our files over to the Virtual Machine we must first locate the folder where our host files are placed.</p>
+
+    <p>Log into your virtual machine and navigate to the root drive. You then need to go to inetpub -> wwwroot.</p>
+
+    <p>The “wwwroot” folder is the file we are going to place all of our application data into and what in turn IIS will pick from to host, there may currently be items in there, this is normal, and is the standard IIS template page.</p>
+
+    <img src="Images/LocalDeployment/023.jpg">
+
+    <p>Go back to your local machine and find the files that you wish to host on your server – for the purpose of this demonstration we are going to use the Blazor documents we created in the previous step – but any web format will do.</p>
+
+    <p>Highlight all of the files that you need, either press right click and copy, or press ctrl+C on your keyboard.</p>
+
+    <p>Navigate back to your virtual machine, specifically the wwwroot file we navigated to earlier and paste your files in, using either right click and paste or ctrl+V.</p>
+
+    <img src="Images/LocalDeployment/024.jpg">
+
+    <p>You can now delete the provided iis files if you wish. </p>
+
+    <p>To check and see your files are being hosted correctly go back to your local machine and open a browser – enter the name of your VM as the address and you should be greeted by your created website!</p>
+
+
+
+
+    
 
 
 

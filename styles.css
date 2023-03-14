@@ -30,3 +30,10 @@ code {
 
 	margin-bottom: 1em;
 }
+
+ol {
+	font-size: 1.2em;
+	margin: 0 auto;
+	max-width: 800px;
+	margin-bottom: 1em;
+}
